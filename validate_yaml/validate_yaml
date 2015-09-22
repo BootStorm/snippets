@@ -1,0 +1,10 @@
+# tool to validate yaml filesin puppet
+# requires that yamlbe installed
+#
+# usage: validate_yaml <name of file to validate>
+#
+
+validate_erb() {
+	ruby -ryaml -e "YAML.load_file '$1'"
+}
+
