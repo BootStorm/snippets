@@ -1,0 +1,10 @@
+# tool to validate erb templates in puppet
+# requires that rubygems be installed
+#
+# usage: validate_erb <name of file to validate>
+#
+
+validate_erb() {
+  erb -P -x -T '-' $1 | ruby -c
+}
+
