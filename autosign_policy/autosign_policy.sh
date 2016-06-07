@@ -13,10 +13,22 @@
 #get certificate name as argument
 certname=$1
 
+#String to check for
+certstring="TooManySecrets"
+
 # dump stdin to $cert variable.
 cert=$(cat)
 
 #extract the request from the PEM
 certreq=$(cat $cert | openssl req -noout -text)
+
+#kludgy but works
+if [ "${certreq/$certstring}" = "${certreq}" ]
+then
+    return 1
+else
+    return 0
+fi
+
 
 
