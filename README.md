@@ -6,3 +6,7 @@ validate_erb
 
 validate_yaml
 - tool to validate yaml files for puppet
+
+autosign_policy
+- this is used to check CSRs and auto approve based on custom attributes
+
