@@ -10,3 +10,13 @@
 #
 # Written by James Forrest - 07/06/2016
 
+#get certificate name as argument
+certname=$1
+
+# dump stdin to $cert variable.
+cert=$(cat)
+
+#extract the request from the PEM
+certreq=$(cat $cert | openssl req -noout -text)
+
+
